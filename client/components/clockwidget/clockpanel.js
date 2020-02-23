@@ -1,5 +1,7 @@
 import React from 'react'
 import ClockWidget from './clockwidget'
+import {Card, CardGroup} from 'react-bootstrap'
+import './clockpanel.css'
 //Start timezones
 const NYTime = new Date().toLocaleString("en-US", {timeZone: "America/New_York", hour: '2-digit', minute: '2-digit', second: '2-digit'})
 const LDNTime = new Date().toLocaleString("en-US", {timeZone: "Europe/London", hour: '2-digit', minute: '2-digit', second: '2-digit'})
@@ -13,19 +15,19 @@ const timeZoneArray = [[NYTime, 'New York'], [LDNTime, 'London'], [MSKTime, 'Mos
     //we then establish the final point of transform by adding 360 to the start(full rotation)
     //the actual time only updates once on creation
 
-
+//console.log(background)
 export default function ClockPanel(props){
     return(
-        <div>
+        <CardGroup id="clockPanel">
         {timeZoneArray.map(timeZone => {
             return(
-                <div key = {timeZone[1]}>
+                <Card key = {timeZone[1]} className = "clockWidgetCard d-flex flex-row border-0">
                 <ClockWidget handAngles = {convertTimeToDegrees(timeZone[0])} city = {timeZone[1]}/>
-                </div>
+                </Card>
             )
         })}
         
-        </div>
+        </CardGroup>
     )
 }
 

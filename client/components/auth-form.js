@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 import {auth} from '../store/index'
 import {Form, Button} from 'react-bootstrap'
 import {ClockPanel} from './index'
+import {Jumbotron} from 'react-bootstrap'
+import './auth-form.css'
 /**
  * COMPONENT
  */
@@ -12,6 +14,9 @@ const AuthForm = props => {
 
   return (
     <div>
+      <Jumbotron>
+      <div id="fpLogo">SILVER PLATINUM STOCKS</div>
+      </Jumbotron>
       <Form onSubmit={handleSubmit} name={name} className="mr-auto ml-auto mt-3 w-25 p-3">
       {name==="signup" ?
       (<Form.Group>
