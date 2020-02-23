@@ -3,30 +3,12 @@ const { User } = require('../db/models')
 
 module.exports = router
 
-let idValue//either a query(if own profile) or the session user id(if checked by admin)
 
-//logged out users have no access
-//logged in users can only access their own information
-//admins can access all the information
-//to mask multiple user pages admin-accessed pages are specified with queries
-//if query is sent by someone without admin rights it gets rejected
-
-const verifyLoggedIn = async (req, res, next) => {
-  if(!req.user || req.query.id && !req.user.admin){
-    return res.status(401).send('Insufficient Rights')
-  }
-  else {
-    req.query.id ? idValue = req.query.id : idValue = req.user.id
-    next()
-  }
-}
-
-router.use(verifyLoggedIn)
 router.get('/', async (req, res, next) => {
 	try {
     const user = await User.findAll({
       where: {
-        id: idValue
+        id: res.locals.idValue
       },
       attributes: [
         'id',
@@ -87,7 +69,7 @@ router.put('/', async (req, res, next) => {
 						admin: req.body.admin
 					},
 					{
-						where: { id: idValue },
+						where: { id: res.locals.idValue },
 						individualHooks: true//salts the updated password, etc
 					}
 				)
@@ -100,7 +82,7 @@ router.put('/', async (req, res, next) => {
 router.delete('/', async (req, res, next) => {
 	try {
 			const destroyed = await User.destroy({
-				where: { id: idValue }
+				where: { id: res.locals.idValue }
 			})
 			res.json(destroyed)
 	} catch (error) {

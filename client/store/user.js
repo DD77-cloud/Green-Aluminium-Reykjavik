@@ -52,7 +52,7 @@ export const deleteUserThunk = (id, admin) => async dispatch => {
 }
 
 export const updateUserThunk = user => async dispatch => {
-	
+	let res
 	try {
 		res = await axios.put(`/api/users/`, user, {params:{id: user.id}})
 	} catch (updateError) {
@@ -60,7 +60,7 @@ export const updateUserThunk = user => async dispatch => {
 	}
 	try {
 		dispatch(updateUser(res.data))
-		history.push(`/profile`)
+		history.push('/profile')
 	} catch (error) {
 		console.error(error)
 	}
@@ -144,6 +144,7 @@ export default function(state = initialState, action) {
 		case ALL_USERS:
 			return { ...state, allUsers: action.users }
 		case UPDATE_USER:
+			console.log(action.user)
 			return { ...state, requestedUser: action.user }
 		default:
 			return state

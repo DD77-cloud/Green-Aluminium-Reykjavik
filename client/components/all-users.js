@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { allUsersThunk, me } from '../store/index'
 import { UserProfile } from './index.js'
-import { Link } from 'react-router-dom'
-import {Button, Nav} from 'react-bootstrap'
-
+import {Button} from 'react-bootstrap'
+import {LinkContainer} from 'react-router-bootstrap'
 class AllUsers extends Component {
 	componentDidMount() {
 		this.props.loadData()
@@ -18,9 +17,9 @@ class AllUsers extends Component {
 						return (
 							<div key={user.id}>
 								<UserProfile user={user} islist={true} />
-								<Nav.Link href={`/profile/${user.id}`}  className="ml-50">
+								<LinkContainer to = {{pathname:"/profile", query:{id:`${user.id}`}}} className="ml-50">
 									<Button variant="danger">Go to User Page</Button>
-								</Nav.Link>
+								</LinkContainer>
 							</div>
 						)
 					})}

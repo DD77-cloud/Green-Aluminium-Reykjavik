@@ -75,6 +75,7 @@ class UserUpdate extends React.Component {
 		this.props.updateUser(data)
 	}
 	render() {
+		
 		let userObj
 		if (this.props.user.id) userObj = this.props.user
 		else if (this.props.loggedInUser) userObj = this.props.loggedInUser

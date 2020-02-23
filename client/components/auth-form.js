@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {auth} from '../store/index'
 import {Form, Button} from 'react-bootstrap'
+import {ClockPanel} from './index'
 /**
  * COMPONENT
  */
@@ -47,7 +48,7 @@ const AuthForm = props => {
           </Button>   <a href="/auth/google"><Button variant="primary">{displayName} with Google</Button></a>
           {error && error.response && <div> {error.response.data} </div>}
          </Form>
-
+            <ClockPanel/>
     
     </div>
   )

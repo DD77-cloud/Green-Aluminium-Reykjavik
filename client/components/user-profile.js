@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { findSingleUserThunk } from '../store/user'
 import {Card, Button, ListGroup, ListGroupItem} from 'react-bootstrap'
+import {LinkContainer} from 'react-router-bootstrap'
 class UserProfile extends React.Component {
 	constructor() {
 		super()
@@ -12,12 +13,17 @@ class UserProfile extends React.Component {
 		}
 	}
 	componentDidMount() {
-		if (this.props.match) {this.props.findUser(this.props.match.params.id)}
+		if (this.props.location && this.props.location.query) {
+			console.log(this.props.location, this.props.location.query, 'why')
+			this.props.findUser(this.props.location.query.id)
+		}
 	}
 	render() {
+		//console.log(this.props.user)
 		let ifAdmin
-		if (this.props.user.loggedInUser) ifAdmin = this.props.user.loggedInUser.admin//checks if the user has admin priveleges 
+		if (this.props.loggedInUser) ifAdmin = this.props.loggedInUser.admin//checks if the user has admin priveleges 
 		let displaybutton = 'none'
+		console.log(this.props.islist)
 		if (!this.props.islist) displaybutton = 'block' //if the component is used in the 
 		//allusers list, 'Go To User Profile' button is displayed. 
 		const displayStyle = {
@@ -27,17 +33,20 @@ class UserProfile extends React.Component {
 		let updateLink = `/profile/update` //masks the fact that other users can be accessed
 	
 		let uservalue
-		if (this.props.user.requestedUser) uservalue = this.props.user.requestedUser
-		else uservalue = this.props.user //checks if the user requested their own profile
+	
+		if (this.props.user.id) uservalue = this.props.user
+		else uservalue = this.props.loggedInUser //checks if the user requested their own profile
 		//or if admin requested someone elses
+	
 		if (ifAdmin) {
-			displayAdmin = 'block' //displays admin panel if the user logged in has
-			updateLink = `/profile/${uservalue.id}/update`} 
-		//admin priveleges 
+			this.props.islist ? displayAdmin ='none' : displayAdmin = 'block' //displays admin panel if the user logged in has admin priveleges 
+			updateLink = `/profile/${uservalue.id}/update`
+		} 
+
 		const adminPanel = {
 			display: displayAdmin
 		}
-		const { userName, firstName, lastName, address, email } = uservalue
+		const {  firstName, lastName, address, email } = uservalue
 		return (
 				<Card bg="dark" text="white" className="ml-auto mr-auto mt-3 w-75">
 					<Card.Header><h3>Welcome back, {firstName} {lastName}</h3></Card.Header>
@@ -49,16 +58,16 @@ class UserProfile extends React.Component {
 							<ListGroupItem variant="secondary">Email: {email}</ListGroupItem>
 						</ListGroup>
 						<div style={displayStyle}>
-					<Card.Link className="pt-3 pb-3 d-flex justify-content-center"
-						href={updateLink}
-					>
+						<LinkContainer to = {updateLink}>
+						<Card.Link className="pt-3 pb-3 d-flex justify-content-center">
 						<Button variant="light">Edit Info</Button>
-					</Card.Link></div>
+						</Card.Link>
+					</LinkContainer></div>
 					<div style={adminPanel}>
 					<Card.Title className="text-center" >Admin Panel</Card.Title>
 					<Card.Body className="d-flex justify-content-center">
-					<Card.Link href="/users"><Button variant="light">All Users</Button></Card.Link>
-					<Card.Link href="/products"><Button variant="light">All Transactions</Button></Card.Link>
+					<LinkContainer to = "/users"><Card.Link><Button variant="light">All Users</Button></Card.Link></LinkContainer>
+					<LinkContainer to = "/transactions"><Card.Link><Button variant="light">All Transactions</Button></Card.Link></LinkContainer>
 					</Card.Body></div>
 				</Card.Body>
 				</Card>
@@ -67,7 +76,7 @@ class UserProfile extends React.Component {
 }
 const mapState = (state, ownProps) => {
 	return {
-		user: ownProps.user || state.userState,
+		user: ownProps.user || state.userState.requestedUser,
 		loggedInUser: state.userState.loggedInUser,
 		islist: ownProps.islist || false
 	}

@@ -25,7 +25,7 @@ const OurNavbar = ({handleClick, isLoggedIn, clientName, bankroll}) => (
           <Nav className="ml-auto h-100">
           <Navbar.Text className="pr-2 mr-1">
            Signed in as: 
-           <LinkContainer to="/profile" ><Nav.Link>{clientName}</Nav.Link></LinkContainer>
+           <Nav.Link href="/profile">{clientName}</Nav.Link>
         </Navbar.Text>
          
          <NavItem  className="text-success p-3 pt-4">
