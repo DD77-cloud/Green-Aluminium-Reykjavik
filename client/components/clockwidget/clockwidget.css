@@ -1,8 +1,10 @@
 @import "clockwidgetKFrules.css";
 
-
+.clockWidgetCardBody {
+  background: transparent;
+}
 #watch ul { list-style:none; margin:0; padding:0 }
-#watch { font-size:0.3em;  position:relative }
+#watch { font-size:0.3em;  position:relative; background: transparent}
 #watch .frame-face {
   position:relative;
   width:30em;
@@ -10,10 +12,11 @@
   margin:2em auto;
   border-radius:15em;
   background: white;
+  
   /* background:-webkit-linear-gradient(top, #f9f9f9,#666);
   background:-moz-linear-gradient(top, #f9f9f9,#666);
   background:linear-gradient(to bottom, #f9f9f9,#666); */
-  /* box-shadow:rgba(0,0,0,.8) .5em .5em 4em; */
+  box-shadow:rgba(0,0,0,.8) .5em .5em 4em;
 }
 #watch .frame-face:before {
   content:'';
@@ -41,13 +44,13 @@
   top:.9em; left:.9em;
   box-shadow:inset rgba(0,0,0,.2) .2em .2em 1em;
   border:.1em solid rgba(0,0,0,.2);
-  background: white;
+  background: transparent;
 }
 #watch .minute-marks li {
   display:block;
-  width:.5em;
-  height: 1em;
-  background:#929394;
+  width:.2em;
+  height:.6em;
+  background:#707070;
   position:absolute;
   top:50%; left:50%;
   margin:-.4em 0 0 -.1em;
@@ -132,16 +135,7 @@
 #watch .digits li:nth-child(10) { transform:translate(-6.9em, -4em) }
 #watch .digits li:nth-child(11) { transform:translate(-3.9em, -6.9em) }
 #watch .digits li:nth-child(12) { transform:translate(0, -8em) }
-#watch .digits:before {
-  content:'';
-  width:1.6em;
-  height:1.6em;
-  border-radius:.8em;
-  position:absolute;
-  top:50%; left:50%;
-  margin:-.8em 0 0 -.8em;
-  background:#121314;
-}
+
 
 
 #watch .hours-hand {

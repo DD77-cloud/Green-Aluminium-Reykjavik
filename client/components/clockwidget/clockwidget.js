@@ -15,9 +15,8 @@ export default function ClockWidget(props){
     //after establishing the original clock hand positions and using them as the start point to transform
     //we then establish the final point of transform by adding 360 to the start(full rotation)
     //the actual time only updates once on creation
-    console.log(document.styleSheets)
     return(
-    <Card.Body className="p-0">
+    <Card.Body className="clockWidgetCardBody" className="p-0">
         <div id="watch">
             <div className="frame-face"></div>
             <ul className="minute-marks">
