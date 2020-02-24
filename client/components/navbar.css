@@ -1,0 +1,11 @@
+#navBarLoggedOut{
+    background-color:white;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 0.75%;
+}
+#navBarLogoSignedOut{
+    width: 30px;
+    margin-right: 6px;
+    margin-top: -6px;
+}

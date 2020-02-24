@@ -4,12 +4,17 @@ import {connect} from 'react-redux'
 import {logout} from '../store/index'
 import {Navbar, Nav, NavItem} from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap'
+import './navbar.css'
 const OurNavbar = ({handleClick, isLoggedIn, clientName, bankroll}) => (
 <div>
       {isLoggedIn ? (
         
-    <Navbar bg="dark" variant="dark" expand="lg">
-    <LinkContainer to = {{pathname:"/portfolio", query:{type:'portfolio'}}}><Navbar.Brand>Silver Platinum Stocks</Navbar.Brand></LinkContainer>
+    <Navbar bg="white" variant="light" expand="lg">
+    <LinkContainer to = {{pathname:"/portfolio", query:{type:'portfolio'}}}>
+      <Navbar.Brand>
+        
+        Silver Platinum Stocks
+        </Navbar.Brand></LinkContainer>
     
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -36,8 +41,11 @@ const OurNavbar = ({handleClick, isLoggedIn, clientName, bankroll}) => (
         </Navbar.Collapse>
         </Navbar>
       ) : (
-        <Navbar bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand href="/home">Silver Platinum Stocks</Navbar.Brand>
+        <Navbar bg="white" variant="light" expand="lg" id="navBarLoggedOut">
+        <Navbar.Brand href="/home">
+        <img id="navBarLogoSignedOut" src="https://cdn.pixabay.com/photo/2014/12/21/23/57/silver-576442_960_720.png"/>
+           Silver Platinum Stocks
+          </Navbar.Brand>
         
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
@@ -48,6 +56,7 @@ const OurNavbar = ({handleClick, isLoggedIn, clientName, bankroll}) => (
           </Nav>
           </Navbar.Collapse>
         </Navbar>
+       
       )}
   </div>
   

@@ -3,6 +3,11 @@
 .clockWidgetCardBody {
   background: transparent;
 }
+.clockCityName{
+  font-family:"Share Tech Mono", monospace;
+  font-size: 18px;
+  text-shadow: 15px 15px gray;
+}
 #watch ul { list-style:none; margin:0; padding:0 }
 #watch { font-size:0.3em;  position:relative; background: transparent}
 #watch .frame-face {
@@ -11,12 +16,12 @@
   height:30em;
   margin:2em auto;
   border-radius:15em;
-  background: white;
   
-  /* background:-webkit-linear-gradient(top, #f9f9f9,#666);
+  background:-webkit-linear-gradient(top, #f9f9f9,#666);
   background:-moz-linear-gradient(top, #f9f9f9,#666);
-  background:linear-gradient(to bottom, #f9f9f9,#666); */
+  background:linear-gradient(to bottom, #f9f9f9,#666); 
   box-shadow:rgba(0,0,0,.8) .5em .5em 4em;
+ 
 }
 #watch .frame-face:before {
   content:'';
@@ -44,13 +49,13 @@
   top:.9em; left:.9em;
   box-shadow:inset rgba(0,0,0,.2) .2em .2em 1em;
   border:.1em solid rgba(0,0,0,.2);
-  background: transparent;
+  background: rgb(236, 236, 236);
 }
 #watch .minute-marks li {
   display:block;
   width:.2em;
   height:.6em;
-  background:#707070;
+  background:#625d5d;
   position:absolute;
   top:50%; left:50%;
   margin:-.4em 0 0 -.1em;
@@ -178,7 +183,7 @@
   box-shadow:rgba(0,0,0,.8) 0 0 .2em;
   transform-origin:0.1em 12em;
   /* transform:rotate(120deg); */
-  animation:seconds 60s linear 0s infinite; /* steps(60, end) but i thought linear looks better */
+  animation:seconds 60s linear 0s infinite; /* steps(60, end) or linear */
 }
 #watch .seconds-hand:after {
   content:'';

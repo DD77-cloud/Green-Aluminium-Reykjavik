@@ -17,7 +17,7 @@ export default function ClockWidget(props){
     //the actual time only updates once on creation
     return(
     <Card.Body className="clockWidgetCardBody" className="p-0">
-        <div id="watch">
+        <div id="watch" style={{fontSize:`${props.size}em`}}>
             <div className="frame-face"></div>
             <ul className="minute-marks">
                 <li></li><li></li><li></li><li></li><li></li><li></li>
@@ -39,7 +39,7 @@ export default function ClockWidget(props){
             <div className="seconds-hand" style={{transform:`rotate(${props.handAngles[2]}deg)`}}></div>
             
         </div>
-        <Card.Text className="text-center">{props.city}</Card.Text>
+        <Card.Text className="text-center clockCityName">{props.city}</Card.Text>
     </Card.Body>
     )
     
