@@ -4,8 +4,12 @@ import {connect} from "react-redux";
 import {logout} from "../store/index";
 import {Navbar, Nav, NavItem, Button} from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap";
+import {Login, Signup} from './index';
 import "./navbar.css";
-const OurNavbar = ({handleClick, isLoggedIn, clientName, bankroll}) => (
+function OurNavbar({handleClick, isLoggedIn, clientName, bankroll}){
+  const [signUpShow, setSignUpShow] = React.useState(false);
+  const [logInShow, setLogInShow] = React.useState(false);
+  return(
 	<div>
 		{isLoggedIn ? (
 			<Navbar bg="white" variant="light" expand="lg">
@@ -118,8 +122,11 @@ const OurNavbar = ({handleClick, isLoggedIn, clientName, bankroll}) => (
 				</Navbar>
 			</div>
 		)}
-	</div>
-);
+     <Signup show={signUpShow} onHide={()=>setSignUpShow(false)}/>
+     <Login show={logInShow} onHide={()=>setLogInShow(false)}/>
+  </div>
+  )
+};
 
 /**
  * CONTAINER

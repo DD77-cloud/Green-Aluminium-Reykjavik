@@ -3,9 +3,7 @@ import {connect} from "react-redux";
 import PropTypes from "prop-types";
 import {auth} from "../store/index";
 import {Form, Button} from "react-bootstrap";
-import {ClockPanel} from "./index";
-import {Jumbotron, Row, Col} from "react-bootstrap";
-import {LinkContainer} from 'react-router-bootstrap';
+import {Modal} from 'react-bootstrap';
 import "./auth-form.css";
 /**
  * COMPONENT
@@ -14,36 +12,17 @@ const AuthForm = props => {
 	const {name, displayName, handleSubmit, error} = props;
 
 	return (
-		<div id="authForm">
-			<Jumbotron className="bg-white pl-5 pt-0 w-100" id="fpJumbo">
-				<Row>
-					<Col className="col-lg-6">
-						<Row>
-							<Col>
-								<ul id="jumbotronList">
-									<li className="fpLogo">SILVER PLATINUM </li>
-									<li className="fpLogo">STOCKS</li>
-									<li>Buy the stocks of your dreams</li>
-								</ul>
-							</Col>
-						</Row>
-
-						<Row>
-							<Col className="ml-2 pl-5 pt-0">
-								<Button variant="success" className="mr-1" id="openAccountButton">Open An Account</Button>
-								<Button variant="outline-success" id="learnMoreButton">
-									Learn More*  <i id="learnMoreArrow" className="fas fa-play"></i>
-								</Button>
-							</Col>
-						</Row>
-					</Col>
-
-					<Col className="col-lg-6 my-auto">
-						<ClockPanel id="clockPanel" />
-					</Col>
-				</Row>
-			</Jumbotron>
-
+   <Modal
+      {...props}
+      size="lg"
+      id="authForm"
+    >
+      <Modal.Header closeButton>
+         <Modal.Title >
+          {displayName}
+        </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
 			<Form id="entryForm"
 				onSubmit={handleSubmit}
 				name={name}
@@ -104,7 +83,8 @@ const AuthForm = props => {
 				</a>
 				{error && error.response && <div> {error.response.data} </div>}
 			</Form>
-		</div>
+      </Modal.Body>
+      </Modal>
 	);
 };
 
