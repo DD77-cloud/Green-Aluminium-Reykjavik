@@ -10,7 +10,7 @@ import "./auth-form.css";
 /**
  * COMPONENT
  */
-const AuthForm = props => {
+const FrontPage = props => {
 	const {name, displayName, handleSubmit, error} = props;
 
 	return (
@@ -147,8 +147,8 @@ const mapDispatch = dispatch => {
 	};
 };
 
-export const Login = connect(mapLogin, mapDispatch)(AuthForm);
-export const Signup = connect(mapSignup, mapDispatch)(AuthForm);
+export const Login = connect(mapLogin, mapDispatch)(FrontPage);
+export const Signup = connect(mapSignup, mapDispatch)(FrontPage);
 
 /**
  * PROP TYPES

@@ -1,11 +1,69 @@
 #navBarLoggedOut{
     background-color:white;
-    margin-left: 10%;
+    padding-left: 10%;
+    font-family: "Russo One";
+    background:
+    -webkit-linear-gradient(135deg, rgba(246,248,249,0) 0%,rgba(229,235,238,1) 100%);
+    background:
+    -moz-linear-gradient(135deg, rgba(246,248,249,0) 0%,rgba(229,235,238,1) 100%);
+    background:
+    linear-gradient(135deg, rgba(246,248,249,0) 0%,rgba(229,235,238,1) 100%);
+}
+.navBarAuthButtons{
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.navBarAuthButtonsNav{
+    margin-right: 13%;
+}
+#tinyNavBarRightSide{
     margin-right: 10%;
-    margin-top: 0.75%;
+}
+#navBarLoggedOut .nav-link{
+    font-family: monospace;
 }
 #navBarLogoSignedOut{
     width: 30px;
     margin-right: 6px;
     margin-top: -6px;
 }
+#tinyTopNavBar{
+    padding-left: 12%;
+    height: 20px;
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 200;
+}
+.ml-auto .fi{
+    margin-right: 5px;
+}
+#tinyTopNavBar .fi.active.nav-link{
+    color: rgb(182, 182, 182)!important;
+}
+#navBarInformation .navBarInformationLinks.nav-link{
+    font-family: Helvetica, sans-serif;
+    font-size: 13px;
+    padding-left: 22px;
+    font-weight: 400;
+    color: rgb(108, 108, 108);
+    position: relative;
+}
+#navBarInformation .navBarInformationLinks.nav-link:hover{
+    color: black;
+}
+
+#navBarInformation .navBarInformationLinks.nav-link::after {
+    bottom: 5px;
+    content: "";
+    height: 3px;
+    left: 15%;
+    position: absolute;
+    background:  rgb(48, 209, 48);
+    opacity: 0;
+    width: 76%;
+  }
+#navBarInformation .navBarInformationLinks.nav-link:hover:after {
+    opacity: 0.5;
+    transition: opacity .5s ease-in-out;
+}
+ 
