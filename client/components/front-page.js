@@ -1,7 +1,7 @@
 import React from "react";
 import {Button} from "react-bootstrap";
 import {FrontPageStocks, ClockPanel} from "./index";
-import {Jumbotron, Row, Col} from "react-bootstrap";
+import {Jumbotron, Row, Col, Nav, Navbar} from "react-bootstrap";
 import {LinkContainer} from 'react-router-bootstrap';
 
 import "./front-page.css";
@@ -10,6 +10,7 @@ import "./front-page.css";
  */
 export default function FrontPage (props){
 	return (
+		<div>
         <div id="frontPageWrapper">
 			<Jumbotron className="bg-white pl-5 pt-0 w-100" id="fpJumbo">
 				<Row>
@@ -38,9 +39,31 @@ export default function FrontPage (props){
 						<ClockPanel id="clockPanel" />
 					</Col>
 				</Row>
-			</Jumbotron>      
-            <FrontPageStocks/>
-            </div>
+		</Jumbotron>      
+            <FrontPageStocks />
+
+			</div>
+						<Navbar variant="light" expand="lg" id="footer">
+						<Nav>
+							<LinkContainer to="/">
+								<Nav.Link className="">For Invididuals*</Nav.Link>
+							</LinkContainer>
+							<LinkContainer to="/">
+								<Nav.Link className="">For Institutions*</Nav.Link>
+							</LinkContainer>
+			   
+						</Nav>
+			  <Nav className="ml-auto" id="footerRightSide">
+				
+				<LinkContainer to="/">
+								<Nav.Link className=""><i className="far fa-question-circle"></i> About Us*</Nav.Link>
+							</LinkContainer>
+				<LinkContainer to="/">
+								<Nav.Link className=""><i className="far fa-envelope"></i> Contact Us*</Nav.Link>
+							</LinkContainer>
+			  </Nav>
+					</Navbar>
+				</div>
 	);
 };
 

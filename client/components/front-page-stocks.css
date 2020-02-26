@@ -1,11 +1,11 @@
 #fpStocksContainer.container-fluid{
-   margin-left: 6%;
-   margin-right: 0%;
-   padding-right: 7%;
+   margin-left: 2.5%;
+   padding-right: 2%;
    padding-left: 0;
+   
 }
 #fpStocksRow{
-    display: flex;
-   justify-content: flex-end;
    width: 100%;
+   margin-right: 0px;
+   margin-left: 0px;
 }

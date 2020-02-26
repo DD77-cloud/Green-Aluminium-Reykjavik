@@ -11,7 +11,8 @@ export default function SingleStock(props){
         curveType: "function",
         legend: { position: "none" },
         hAxis: { textPosition: 'none' },
-        chartArea: {'width': '75%', 'height': '70%'}
+        chartArea: {'width': '75%', 'height': '70%'},
+        colors: ['green']
       }
     const graphData =[
         ["Date", "Price"],
@@ -22,7 +23,7 @@ export default function SingleStock(props){
     //End Graph Options
     const {symbol, change, companyName, marketCap, changePercent} = props.stock.quote
  return(
-     <Col>
+     <Col className="fpSingleStockCol">
     
      <Card className="singleStockCard">
          
@@ -31,7 +32,7 @@ export default function SingleStock(props){
     
     {change}
     {changePercent}
-    asds
+
     {marketCap}
     
     <Chart

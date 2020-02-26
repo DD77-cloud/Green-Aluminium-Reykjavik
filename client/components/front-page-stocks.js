@@ -13,7 +13,7 @@ import "./front-page-stocks.css";
 class FrontPageStocks extends Component{
     
     componentDidMount(){
-        this.props.getStockUpdate({TSLA:0, AMZN:1, MSFT:2, IBM:3})
+        this.props.getStockUpdate({TSLA:0, AMZN:1, MSFT:2,})
     }
     
     
@@ -22,7 +22,7 @@ render(){
  return(
      
          <Container id="fpStocksContainer" fluid={true}>
-             <Row id="fpStocksRow" >
+             <Row id="fpStocksRow" className="justify-content-around">
         {Object.entries(this.props.portfolio).map(([key, value])=>(
             <SingleStock key={key} stock={value}/>
         ))}
