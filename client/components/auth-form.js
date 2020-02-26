@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import PropTypes from "prop-types";
 import {auth} from "../store/index";
 import {Form, Button} from "react-bootstrap";
-import {Modal} from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap';
 import "./auth-form.css";
 /**
  * COMPONENT
@@ -12,18 +12,7 @@ const AuthForm = props => {
 	const {name, displayName, handleSubmit, error} = props;
 
 	return (
-   <Modal
-      {...props}
-      size="lg"
-      id="authForm"
-    >
-      <Modal.Header closeButton>
-         <Modal.Title >
-          {displayName}
-        </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-			<Form id="entryForm"
+			<Form id="logInNavbar"
 				onSubmit={handleSubmit}
 				name={name}
 				className="mr-auto ml-auto mt-3 w-25 p-3"
@@ -83,8 +72,7 @@ const AuthForm = props => {
 				</a>
 				{error && error.response && <div> {error.response.data} </div>}
 			</Form>
-      </Modal.Body>
-      </Modal>
+
 	);
 };
 

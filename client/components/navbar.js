@@ -4,11 +4,12 @@ import {connect} from "react-redux";
 import {logout} from "../store/index";
 import {Navbar, Nav, NavItem, Button} from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap";
-import {Login, Signup} from './index';
+import {Login} from './index';
 import "./navbar.css";
+import "./auth-form.css";
 function OurNavbar({handleClick, isLoggedIn, clientName, bankroll}){
-  const [signUpShow, setSignUpShow] = React.useState(false);
-  const [logInShow, setLogInShow] = React.useState(false);
+  const [displayLogin, setDisplayLogin] = React.useState({height:0, width: 0, overflow: 'hidden'})
+  console.log(displayLogin, setDisplayLogin)
   return(
 	<div>
 		{isLoggedIn ? (
@@ -111,19 +112,21 @@ function OurNavbar({handleClick, isLoggedIn, clientName, bankroll}){
 						</LinkContainer>
             </Nav>
 						<Nav className="ml-auto h-100 navBarAuthButtonsNav">
+            <div style={displayLogin}>
+          <Login />
+          </div>
 							<LinkContainer to="/login">
-              <Button variant="outline-success " className="rounded-0 mr-1 navBarAuthButtons" >Login</Button>
+              <Button variant="outline-success" onClick={()=>{setDisplayLogin({height:50, width: 100, overflow: 'hidden'})}}className="rounded-0 mr-1 navBarAuthButtons" >Login</Button>
 							</LinkContainer>
 							<LinkContainer to="/signup">
               <Button variant="success" className="rounded-0 navBarAuthButtons">Open Account</Button>
 							</LinkContainer>
 						</Nav>
 					</Navbar.Collapse>
+         
 				</Navbar>
 			</div>
 		)}
-     <Signup show={signUpShow} onHide={()=>setSignUpShow(false)}/>
-     <Login show={logInShow} onHide={()=>setLogInShow(false)}/>
   </div>
   )
 };
