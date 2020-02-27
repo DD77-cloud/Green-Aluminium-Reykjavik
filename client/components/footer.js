@@ -105,7 +105,27 @@ export default function Footer (props){
                         </Col>
                     </Row>
                 </Container>
-            </Nav>   
+            </Nav>
+            <Nav id="ContactUs" className="col-lg-3">
+                     <ul >
+                        <li>Connect With Us</li>
+                        <li>
+                        <LinkContainer to="/">
+                                <Nav.Link className="footerlink"><i className="fas fa-phone-volume"></i> 800-555-5555*</Nav.Link>
+                        </LinkContainer>
+                        </li>
+                        <li>
+                        <LinkContainer to="/">
+                                <Nav.Link className="footerlink"><i className="fas fa-map-marker-alt"></i> Find a Branch*</Nav.Link>
+                        </LinkContainer>
+                        </li>
+                        <li id="socialMedia"><i className="fab fa-twitter-square"></i>
+                        <i className="fab fa-facebook-square"></i>
+                        <i className="fab fa-linkedin"></i>
+                        <i className="fab fa-instagram-square"></i>
+                       <i className="fab fa-youtube-square"></i></li>
+                     </ul>
+                </Nav>
         </Navbar>
     );
 };

@@ -19,15 +19,35 @@
 #footer ul{
     list-style: none; 
 }
+#footer ul li:nth-child(2){
+    margin-top: 4px;
+}
 #footer .footerlink.active.nav-link{
     font-weight: 200;
     color: rgb(149, 149, 149)!important;
     line-height: 0.3;
+   padding-left: 0;
 }
 #footer .footerlink.active.nav-link:hover{
     text-decoration: underline solid  rgb(149, 149, 149);
 }
 #footerNav{
     width: 75%;
-    margin-left: 6%;
+    margin-left: 9%;
+}
+.fas .fa-phone-volume{
+    color: black;
+}
+#socialMedia i{
+    font-size: 23px;
+    padding-right: 6px;
+    padding-top: 3px;
+}
+#ContactUs{
+    margin-left: 10%;
+}
+#ContactUs .footerlink.active.nav-link{
+    line-height: 1;
+    padding: 0;
+    padding-bottom: 2px;
 }
