@@ -2,12 +2,17 @@
 ##Work In Progress
 
 ![Redesign](/ReadmeImages/frontpage.png)
+
 links marked * are non functional.
 
 Redesigned version:
+
 [Redesign](http://spstocks.herokuapp.com/)
+
 Functional Version:
+
 [Silver PlatinumStock](http://silverplatinumstocks.herokuapp.com/)
+
 ## Features:
 ![Image of the Site](/ReadmeImages/site.png)
 
