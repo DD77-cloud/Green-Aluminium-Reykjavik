@@ -35,9 +35,6 @@
     width: 75%;
     margin-left: 9%;
 }
-.fas .fa-phone-volume{
-    color: black;
-}
 #socialMedia i{
     font-size: 23px;
     padding-right: 6px;
@@ -45,6 +42,9 @@
 }
 #ContactUs{
     margin-left: 10%;
+}
+#ContactUs li:nth-child(2) i, li:nth-child(3) i{
+    color: rgb(82, 82, 82);
 }
 #ContactUs .footerlink.active.nav-link{
     line-height: 1;
