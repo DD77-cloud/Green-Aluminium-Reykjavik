@@ -8,21 +8,21 @@ const LDNTime = new Date().toLocaleString("en-US", {timeZone: "Europe/London", h
 const MSKTime = new Date().toLocaleString("en-US", {timeZone: "Europe/Moscow", hour: '2-digit', minute: '2-digit', second: '2-digit'})
 const HKTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Hong_Kong", hour: '2-digit', minute: '2-digit', second: '2-digit'})
 const TKYTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Tokyo", hour: '2-digit', minute: '2-digit', second: '2-digit'})
-const timeZoneArray = [[NYTime, 'New York'], [LDNTime, 'London'], [MSKTime, 'Moscow'], [HKTime, 'Hong Kong'], [TKYTime, 'Tokyo']]
+const timeZoneArray = [[HKTime, 'Hong Kong', 0.28], [TKYTime, 'Tokyo', 0.30], [NYTime, 'New York', 0.32], [LDNTime, 'London', 0.30], [MSKTime, 'Moscow', 0.28]]
 //End timezones
     //the clocks rotate using css transition(i.e. 12 hours = transition that takes 42300 seconds
     //after establishing the original clock hand positions and using them as the start point to transform
     //we then establish the final point of transform by adding 360 to the start(full rotation)
     //the actual time only updates once on creation
 
-//console.log(background)
+
 export default function ClockPanel(props){
     return(
         <CardGroup id="clockPanel">
         {timeZoneArray.map(timeZone => {
             return(
                 <Card key = {timeZone[1]} className = "clockWidgetCard d-flex flex-row border-0">
-                <ClockWidget handAngles = {convertTimeToDegrees(timeZone[0])} city = {timeZone[1]}/>
+                <ClockWidget handAngles = {convertTimeToDegrees(timeZone[0])} city = {timeZone[1]} size={timeZone[2]}/>
                 </Card>
             )
         })}

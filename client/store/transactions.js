@@ -98,15 +98,15 @@ export const addPurchaseThunk = (order) => async dispatch => {
 			return {...state, transactions: output, portfolio: incPortfolio}
 		case GET_IEX_UPDATE:
 			const stateToUpdate = {...state.portfolio}
-			for (let key in action.apiPayload) {
-				let stock = action.apiPayload[key]
-				if(!stateToUpdate[stock.quote.symbol]){
-					stateToUpdate[stock.quote.symbol] = {ticker: stock.quote.symbol, priceAtTransaction: 0, oldprice: 0}
-				}
-				stateToUpdate[stock.quote.symbol].priceAtTransaction = stock.quote.latestPrice
-				stateToUpdate[stock.quote.symbol].oldprice = stock.quote.previousClose
-				}
-			return {...state, portfolio: stateToUpdate, isMarketOpen: Object.values(action.apiPayload)[0].quote.isUSMarketOpen}
+			// for (let key in action.apiPayload) {
+			// 	let stock = action.apiPayload[key]
+			// 	if(!stateToUpdate[stock.quote.symbol]){
+			// 		stateToUpdate[stock.quote.symbol] = {ticker: stock.quote.symbol, priceAtTransaction: 0, oldprice: 0}
+			// 	}
+			// 	stateToUpdate[stock.quote.symbol].priceAtTransaction = stock.quote.latestPrice
+			// 	stateToUpdate[stock.quote.symbol].oldprice = stock.quote.previousClose
+			// 	}
+			return {...state, portfolio: action.apiPayload, isMarketOpen: Object.values(action.apiPayload)[0].quote.isUSMarketOpen}
 		default:
 			return state
 	 }
