@@ -1,0 +1,33 @@
+#footer{
+    
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
+    position: absolute;
+    bottom: 0;
+    color: rgb(77, 77, 77);
+    height: 150px;
+    width: 100%;
+    font-family: "Share Tech Mono";
+    font-size: 15px;
+    font-weight: 600;
+    background:
+    -webkit-linear-gradient(135deg,rgba(229,235,238,1)  0% ,rgba(246,248,249,0) 100%);
+    background:
+    -moz-linear-gradient(135deg,rgba(229,235,238,1)  0% ,rgba(246,248,249,0) 100%);
+    background:
+    linear-gradient(135deg,rgba(229,235,238,1)  0% ,rgba(246,248,249,0) 100%);
+}
+#footer ul{
+    list-style: none; 
+}
+#footer .footerlink.active.nav-link{
+    font-weight: 200;
+    color: rgb(149, 149, 149)!important;
+    line-height: 0.3;
+}
+#footer .footerlink.active.nav-link:hover{
+    text-decoration: underline solid  rgb(149, 149, 149);
+}
+#footerNav{
+    width: 75%;
+    margin-left: 6%;
+}

@@ -4,6 +4,25 @@
     -webkit-box-shadow: 0px 14px 30px 10px rgba(126, 126, 126, 0.4); 
     box-shadow: 0px 14px 30px 10px rgba(110, 110, 110, 0.4);
 }
+.singleStockCard ul{
+  line-height: 1;
+  margin-top: -10px;
+  padding-left: 0px;
+  list-style: none;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: monospace;
+}
+.singleStockCard .card-title{
+  display: flex;
+  justify-content: space-between;
+  font-family: "Russo One";
+}
+.singleStockCard .singleStockCardCompanyName{
+  font-size: 15px !important;
+  font-family: "Share Tech Mono";
+  border-bottom: 1px solid rgba(104, 104, 104, 0.34);
+}
 .fpSingleStockCol{
   max-width: 30%;
 }

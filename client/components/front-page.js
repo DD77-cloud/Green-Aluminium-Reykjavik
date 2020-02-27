@@ -1,6 +1,6 @@
 import React from "react";
 import {Button} from "react-bootstrap";
-import {FrontPageStocks, ClockPanel} from "./index";
+import {FrontPageStocks, ClockPanel, Footer} from "./index";
 import {Jumbotron, Row, Col, Nav, Navbar} from "react-bootstrap";
 import {LinkContainer} from 'react-router-bootstrap';
 
@@ -43,26 +43,7 @@ export default function FrontPage (props){
             <FrontPageStocks />
 
 			</div>
-						<Navbar variant="light" expand="lg" id="footer">
-						<Nav>
-							<LinkContainer to="/">
-								<Nav.Link className="">For Invididuals*</Nav.Link>
-							</LinkContainer>
-							<LinkContainer to="/">
-								<Nav.Link className="">For Institutions*</Nav.Link>
-							</LinkContainer>
-			   
-						</Nav>
-			  <Nav className="ml-auto" id="footerRightSide">
-				
-				<LinkContainer to="/">
-								<Nav.Link className=""><i className="far fa-question-circle"></i> About Us*</Nav.Link>
-							</LinkContainer>
-				<LinkContainer to="/">
-								<Nav.Link className=""><i className="far fa-envelope"></i> Contact Us*</Nav.Link>
-							</LinkContainer>
-			  </Nav>
-					</Navbar>
+						<Footer/>
 				</div>
 	);
 };

@@ -21,19 +21,21 @@ export default function SingleStock(props){
         graphData.push([entry.date, entry.open])
     })
     //End Graph Options
-    const {symbol, change, companyName, marketCap, changePercent} = props.stock.quote
+    let {symbol, change, companyName, marketCap, changePercent} = props.stock.quote
+    let gainLoss
+    change>0 ? gainLoss="green" : gainLoss="red"
  return(
      <Col className="fpSingleStockCol">
     
      <Card className="singleStockCard">
          
     <Card.Body>
-    <Card.Title>{symbol}<span>{companyName}</span></Card.Title>
+    <Card.Title><span className="singleStockCardSymbol">{symbol}</span><span className="singleStockCardCompanyName">{companyName}</span></Card.Title>
+    <ul style={{color:`${gainLoss}`}}>
+    <li>{change}({changePercent}%) TODAY</li>
+    <li style={{color:'lightslategray'}}>Market Cap: {(marketCap/1000000000).toFixed(2)}B</li>
+    </ul>
     
-    {change}
-    {changePercent}
-
-    {marketCap}
     
     <Chart
           chartType="LineChart"
