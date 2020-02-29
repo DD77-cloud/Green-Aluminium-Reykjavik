@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {FrontPage, UserProfile, AllUsers, UserUpdate, TransPort} from './components'
+import {FrontPage, UserProfile, AllUsers, UserUpdate, TransPort, Login, SignUp} from './components'
 import {me} from './store/index'
 
 /**
@@ -19,7 +19,9 @@ class Routes extends Component {
       <Switch>
         {/* Routes placed here are available to all visitors */}
         <Route path="/home" component={FrontPage} />
-        {/* <Route path="/signup" component={Signup} /> */}
+        <Route path="/login" component={Login}/>
+        <Route path="/signup" component={SignUp}/>
+        
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
@@ -30,7 +32,7 @@ class Routes extends Component {
             <Route path="/profile/:id" component={UserProfile}/>  {/* A user will never see this, strictly for admin access */}
             <Route path="/profile" component={UserProfile}/>
             <Route path="/users" component={AllUsers} />
-            
+          
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}

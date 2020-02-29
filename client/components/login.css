@@ -1,0 +1,19 @@
+.loginLabel, .logInHelpLinks{
+    font-family: "Share Tech Mono";
+    font-weight: 200;
+}
+.logInHelpLinks{
+    list-style: none;
+    font-size: 12px;
+}
+#loginCard{
+    box-shadow:rgba(0,0,0,.8) .5em .5em 4em;
+    /* box-shadow: 0px 14px 30px 10px rgba(110, 110, 110, 0.4); */
+    border: 0px solid black;
+    border-top: 5px solid rgb(21, 110, 21);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+}
+#logInHelpUL{
+    padding-top: 55px;
+    margin-bottom: -5px;
+}

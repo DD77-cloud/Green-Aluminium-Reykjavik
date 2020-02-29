@@ -1,0 +1,29 @@
+#signUpFormRow{
+    margin-left: 30%;
+
+}
+#signUpTabs .navbar-text{
+    font-family: "Krona One";
+}
+#signUpForm-tabpane-second{
+    margin-top: -187%;
+}
+#signUpTabs a{
+    font-family: "Share Tech Mono";
+    color: black;
+}
+#signUpTabs .nav-link.active{
+    background-color: #28a745 ;
+    color: white;
+}
+#signUp {
+    font-family: "Share Tech Mono" ;
+    font-weight: 200;
+}
+#signUp input{
+    font-family: "Share Tech Mono" ;
+    font-weight: 200;
+}
+#signUp .text-light.form-text{
+    color: black !important;
+}

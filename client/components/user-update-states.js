@@ -3,6 +3,10 @@ import {Form} from 'react-bootstrap'
 export default function usstates(props) {
 	const statelist = [
 		{
+			name: '',
+			abbreviation: '',
+		},
+		{
 			name: 'Alabama',
 			abbreviation: 'AL'
 		},

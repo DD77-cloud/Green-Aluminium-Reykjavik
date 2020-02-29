@@ -6,7 +6,7 @@ import {Navbar, Nav, NavItem, Button} from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap";
 import {Login} from './index';
 import "./navbar.css";
-import "./auth-form.css";
+
 function OurNavbar({handleClick, isLoggedIn, clientName, bankroll}){
   return(
 	<div>
@@ -84,13 +84,13 @@ function OurNavbar({handleClick, isLoggedIn, clientName, bankroll}){
 					expand="lg"
 					id="navBarLoggedOut"
 				>
-					<Navbar.Brand href="/home">
+					<LinkContainer to="/home"><Navbar.Brand>
 						<img
 							id="navBarLogoSignedOut"
 							src="https://cdn.pixabay.com/photo/2014/12/21/23/57/silver-576442_960_720.png"
 						/>
 						Silver Platinum Stocks
-					</Navbar.Brand>
+					</Navbar.Brand></LinkContainer>
 
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
@@ -111,7 +111,7 @@ function OurNavbar({handleClick, isLoggedIn, clientName, bankroll}){
             </Nav>
 						<Nav className="ml-auto h-100 navBarAuthButtonsNav">
             
-							<LinkContainer to="/login">
+							<LinkContainer to='/login'>
               <Button variant="outline-success" onClick={()=>{setDisplayLogin({height:50, width: 100, overflow: 'hidden'})}}className="rounded-0 mr-1 navBarAuthButtons" >Login</Button>
 							</LinkContainer>
 							<LinkContainer to="/signup">

@@ -32,7 +32,7 @@ export default function SingleStock(props){
     <Card.Body>
     <Card.Title><span className="singleStockCardSymbol">{symbol}</span><span className="singleStockCardCompanyName">{companyName}</span></Card.Title>
     <ul style={{color:`${gainLoss}`}}>
-    <li>{change}({changePercent}%) TODAY</li>
+    <li>{change}({(changePercent*100).toFixed(2)}%) TODAY</li>
     <li style={{color:'lightslategray'}}>Market Cap: {(marketCap/1000000000).toFixed(2)}B</li>
     </ul>
     

@@ -1,0 +1,28 @@
+.fpLogo{
+    font-family: "Krona One";
+    font-size: 40px;
+    line-height: 0.9em;
+}
+#learnMoreButton{
+    width: 31%;
+}
+#openAccountButton{
+    width: 32%;
+}
+#learnMoreArrow{
+  margin-top: 2px;
+  margin-left: 3px;
+  text-shadow: 2px 2px green;
+}
+#jumbotronList{
+    width: 60%;
+    list-style: none;
+    font-family: "Russo One";
+    font-size: 25px;
+}
+#fpNumImg{
+    height: 50%;
+}
+#clockPanel{
+    margin-top: -10px;;
+}
