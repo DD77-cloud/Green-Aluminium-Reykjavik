@@ -23,7 +23,14 @@ router.post('/signup', async (req, res, next) => {
       email: req.body.email,
       firstName: req.body.firstName,
       lastName: req.body.lastName,
-      password: req.body.password
+      password: req.body.password,
+      apt: req.body.apt,
+      houseNumber: req.body.houseNumber,
+      street: req.body.street,
+      zipcode: req.body.zipcode,
+      city: req.body.city,
+      state: req.body.state,
+      country: req.body.country
     })
     req.login(user, err => (err ? next(err) : res.json(user)))
   } catch (err) {

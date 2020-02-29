@@ -11,9 +11,10 @@ import "./signup.css";
  */
 const SignUp = props => {
 	const {name, displayName, handleSubmit, error} = props;
-
+	const [activeTab, setActiveTab] = React.useState("first")
+	const handleTabSwitch = (tabIn) => setActiveTab(tabIn)
 	return (
-		<Tab.Container id="signUpForm" defaultActiveKey="first">
+		<Tab.Container id="signUpForm" activeKey={activeTab}>
 		<Row id="signUpFormRow" className="w-75">
 			<Col sm={3}>
 			
@@ -23,21 +24,23 @@ const SignUp = props => {
 					Create An Account
 				</Navbar.Text>
 				<Nav.Item>
-				<Nav.Link className=".rounded-0 mt-3" eventKey="first">Account Information</Nav.Link>
+				<Nav.Link className=".rounded-0 mt-3" eventKey="first" onClick={()=>handleTabSwitch('first')}>Account Information</Nav.Link>
 				</Nav.Item>
 				<Nav.Item>
-				<Nav.Link className="rounded-0" eventKey="second">Personal Information</Nav.Link>
+				<Nav.Link className="rounded-0" eventKey="second" onClick={()=>handleTabSwitch('second')}>Personal Information</Nav.Link>
 				</Nav.Item>
 			</Nav>
 			</Col>
 			<Col sm={3}>
-			<Tab.Content>
 			<Form id="signUp"
 				onSubmit={handleSubmit}
 				name={name}
 				className="mt-3 p-3"
 			>
+			<Tab.Content>
+			
 				<Tab.Pane eventKey="first" className="fade">
+					<Form.Group>
 					<Form.Group controlId="firstName">
 							<Form.Label>First Name</Form.Label>
 							<Form.Control
@@ -77,7 +80,8 @@ const SignUp = props => {
 					
 					</Form.Text>
 				</Form.Group>
-				<Button variant="success" >Next</Button>
+				</Form.Group>
+				<Button variant="success" onClick={()=>handleTabSwitch('second')}>Next</Button>
 				</Tab.Pane>
 				<Tab.Pane eventKey="second" className="fade">
 					<Form.Group controlId="apt">
@@ -135,8 +139,9 @@ const SignUp = props => {
 				{error && error.response && <div> {error.response.data} </div>}
 			
 				</Tab.Pane>
-				</Form>
+				
 			</Tab.Content>
+			</Form>
 			</Col>
 		</Row>
 	</Tab.Container>
@@ -170,7 +175,14 @@ const mapDispatch = dispatch => {
 				email: evt.target.email.value,
 				password: evt.target.password.value,
 				firstName: evt.target.firstName.value,
-				lastName: evt.target.lastName.value
+				lastName: evt.target.lastName.value,
+				apt: evt.target.apt.value,
+				houseNumber: evt.target.houseNumber.value,
+				street: evt.target.street.value,
+				zipcode: evt.target.zipcode.value,
+				city: evt.target.city.value,
+				state: evt.target.state.value,
+				country: evt.target.country.value,
 			};
 			dispatch(auth(formInput, formName));
 		}
