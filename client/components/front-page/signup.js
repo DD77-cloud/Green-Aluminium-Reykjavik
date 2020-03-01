@@ -1,8 +1,8 @@
 import React from "react";
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
-import { USstates } from './index.js'
-import {auth} from "../store/index";
+import { USstates } from '../index.js'
+import {auth} from "../../store/index";
 import {Form, Button, Tab, Row, Col, Nav, Navbar} from "react-bootstrap";
 import {LinkContainer} from 'react-router-bootstrap';
 import "./signup.css";

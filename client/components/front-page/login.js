@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
-import {auth} from "../store/index";
+import {auth} from "../../store/index";
 import {Form, Button, Card} from "react-bootstrap";
 import {LinkContainer} from 'react-router-bootstrap';
 import "./login.css";
@@ -36,12 +36,12 @@ const Login = props => {
 				</a>
 				{error && error.response && <div> {error.response.data} </div>}
 			</Form>
-            <Card.Text>
+            
                 <ul className="list-inline d-flex justify-content-between" id="logInHelpUL">
                     <li className="logInHelpLinks list-inline-item"><LinkContainer to="/"><a>Forgot User ID or Password?*</a></LinkContainer></li>
                     <li className="logInHelpLinks list-inline-item"><LinkContainer to="/"><a>Don't Have An Account?*</a></LinkContainer></li>
                 </ul>
-            </Card.Text>
+           
                
             </Card.Body>
         </Card>

@@ -1,17 +1,23 @@
 import React from 'react'
-
-
-import {Navbar, Footer} from './components'
+import {connect} from "react-redux";
+import {Footer} from './components'
+import NavbarRoutes from './navbar-routes'
 import Routes from './routes'
 
-const App = () => {
+const App = ({isLoggedIn}) => {
+ let layoutStyle = {display: "block", flexDirection: "column"};
+ if(isLoggedIn) layoutStyle = {display: "flex", flexDirection: "row"}
   return (
-    <div>
-      <Navbar />
+    <div style = {layoutStyle}>
+      <NavbarRoutes />
       <Routes />
       <Footer />
     </div>
   )
 }
-
-export default App
+const mapState = state => {
+	return {
+		isLoggedIn: !!state.userState.loggedInUser.id
+	};
+};
+export default connect(mapState, null)(App)

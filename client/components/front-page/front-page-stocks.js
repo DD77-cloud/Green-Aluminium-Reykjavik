@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import {connect} from "react-redux";
-import {iexUpdateThunk } from '../store/transactions'
-import {SingleStock} from './index'
-import PropTypes from "prop-types";
-import {auth} from "../store/index";
+import {iexUpdateThunk } from '../../store/transactions'
+import {SingleStock} from '../index'
 import {Container, Row} from "react-bootstrap";
-import {LinkContainer} from 'react-router-bootstrap';
 import "./front-page-stocks.css";
 /**
  * COMPONENT

@@ -1,7 +1,7 @@
 import React from "react";
 import {Button} from "react-bootstrap";
-import {FrontPageStocks, ClockPanel, Footer} from "./index";
-import {Jumbotron, Row, Col, Nav, Navbar} from "react-bootstrap";
+import {ClockPanel} from "../index";
+import {Jumbotron, Row, Col} from "react-bootstrap";
 import {LinkContainer} from 'react-router-bootstrap';
 
 import "./front-page-jumbotron.css";
@@ -25,7 +25,9 @@ export default function FPJumbotron (props){
 
                             <Row>
                                 <Col className="ml-2 pl-5 pt-0">
+                                <LinkContainer to="/signup">
                                     <Button variant="success" className="mr-1" id="openAccountButton">Open An Account</Button>
+                                    </LinkContainer>
                                     <Button variant="outline-success" id="learnMoreButton">
                                         Learn More*  <i id="learnMoreArrow" className="fas fa-play"></i>
                                     </Button>
