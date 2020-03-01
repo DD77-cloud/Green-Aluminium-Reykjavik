@@ -1,5 +1,5 @@
 # Silver Platinum Stocks
-##Work In Progress
+## Work In Progress
 
 ![Redesign](/ReadmeImages/frontpage.png)
 
@@ -12,6 +12,7 @@ Redesigned version:
 Functional Version:
 
 [Silver PlatinumStock](http://silverplatinumstocks.herokuapp.com/)
+(old repo with commits - https://github.com/SShneider/Silver-Platinum-Newshell)
 
 ## Features:
 ![Image of the Site](/ReadmeImages/site.png)
