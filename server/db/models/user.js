@@ -204,9 +204,13 @@ const User = db.define(
 				}
 			}
 		},
-		bankroll: {
+		bankrollDollars: {
 			type: Sequelize.INTEGER,
-			defaultValue: 500000,
+			defaultValue: 5000,
+		},
+		bankrollCents: {
+			type: Sequelize.INTEGER,
+			defaultValue: 0,
 		},
 		admin: {
 			type: Sequelize.BOOLEAN,
@@ -225,10 +229,20 @@ const User = db.define(
 	{
 		hooks: {
 			beforeCreate: user => {
-				user.address = `Apt ${user.apt}, ${user.houseNumber} ${user.street}, ${user.city}, ${user.zipcode}, ${user.state}, ${user.country}`;
+				let userAddress=[]
+				let addressValues = [user.apt, user.houseNumber, user.street, user.city, user.zipcode, user.state, user.country]
+				addressValues.forEach(entry => {
+					if(entry.length) userAddress.push(entry)
+				})
+				user.address = userAddress.join(", ")
 			},
 			beforeUpdate: user => {
-				user.address = `Apt ${user.apt}, ${user.houseNumber} ${user.street}, ${user.city}, ${user.zipcode}, ${user.state}, ${user.country}`;
+				let userAddress=[]
+				let addressValues = [user.apt, user.houseNumber, user.street, user.city, user.zipcode, user.state, user.country]
+				addressValues.forEach(entry => {
+					if(entry.length) userAddress.push(entry)
+				})
+				user.address = userAddress.join(", ")
 			},
 			
 		}

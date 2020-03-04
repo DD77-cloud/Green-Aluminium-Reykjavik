@@ -5,6 +5,7 @@
  */
 export {default as Navbar} from './front-page/navbar'
 export {default as LoggedInNavbar} from './stock-trading-app/st-navbar'
+export {default as StockList} from './stock-trading-app/stock-list'
 export {default as UserProfile} from './user-profile'
 export {default as AllUsers} from './all-users'
 export {default as Login} from './front-page/login'

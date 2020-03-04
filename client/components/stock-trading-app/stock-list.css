@@ -1,0 +1,15 @@
+#stockList{
+    padding: 0;
+    width: 350px;
+    height: 100vh;
+    border-right: 2px solid rgba(179, 179, 179, 0.383);
+}
+#findStockForm{
+    margin: 0;
+    height: 75px;
+    border-bottom: 2px solid rgba(179, 179, 179, 0.383);
+}
+#findStockForm input{
+    font-family: "Russo One";
+    color: black;
+}

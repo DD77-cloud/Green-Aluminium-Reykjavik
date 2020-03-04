@@ -1,14 +1,14 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
-import {Navbar, LoggedInNavbar} from './components'
+import {Footer, StockList} from './components'
 import {me} from './store/index'
-class NavbarRoutes extends Component {
+class FooterRoutes extends Component {
     render() {
         const {isLoggedIn} = this.props
         return (
         <div>
-        {isLoggedIn ? (<LoggedInNavbar/>) : (<Navbar/>)}
+        {isLoggedIn ? (<StockList/>) : (<Footer/>)}
         </div>
         )
     }
@@ -35,12 +35,12 @@ const mapDispatch = dispatch => {
 
 // The `withRouter` wrapper makes sure that updates are not blocked
 // when the url changes
-export default connect(mapState, mapDispatch)(NavbarRoutes)
+export default connect(mapState, mapDispatch)(FooterRoutes)
 
 /**
  * PROP TYPES
  */
-NavbarRoutes.propTypes = {
+FooterRoutes.propTypes = {
   loadInitialData: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired
 }
