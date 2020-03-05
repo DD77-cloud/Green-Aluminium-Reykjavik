@@ -12,8 +12,15 @@ class TransactionPortfolio extends Component{
             allTransactions: [],//could be user specific or all all
             portfolio: [],
             initialLossGain: this.updateStockMarketInitial(),
-            foundTicker: ""
+            foundTicker: "",
+            suggestedTickers: []
         }
+    }
+    findSuggestedSymbols = (event) => {
+        if(event.target.value.length<=0) return 0;
+        let toMatch = RegExp(`^${event.target.value}`, 'i')
+        let suggestions = this.props.allTheSymbols.filter(symbol => toMatch.test(symbol))
+        this.setState({suggestedTickers: suggestions})
     }
     updateStockMarket = () =>{
         this.interval = setInterval(() =>{
@@ -64,9 +71,10 @@ class TransactionPortfolio extends Component{
             <div id = "stockList">
             <Form id="findStockForm" inline onSubmit={() => this.findTicker(event)}>
             <Form.Group controlId = "tickerToFind" className = "w-100 h-100">
-             <Form.Control type="text" placeholder="&#128269; Search by stock symbol or ticker" className="h-100 rounded-0 border-0 w-100" name="tickerToFind"/>
+             <Form.Control onChange = {this.findSuggestedSymbols} type="text" placeholder="&#128269; Search by stock symbol or ticker" className="h-100 rounded-0 border-0 w-100" name="tickerToFind"/>
              </Form.Group>
             </Form>
+            
             {this.state.foundTicker.length && this.props.portfolio[this.state.foundTicker] ? (
                  <BuyStock trans={this.props.portfolio[this.state.foundTicker]} isPortfolio = {true} isPurchase= {true} balance={this.props.balance}/> 
                 ) :( null)

@@ -11,7 +11,8 @@
 #loggedInBrand{
     margin: 0;
     height: 75px;
-    background-color: #3af866a6;
+    background-color: rgb(58, 204, 160); 
+    /* #4ADEB1 */
     border: 2px solid #2de25780;
 }
 #welcomeBack{

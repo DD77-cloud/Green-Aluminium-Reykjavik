@@ -12,6 +12,7 @@ router.get('/', async (req, res, next) => {
 })
 router.get('/symbols', async (req, res, next) =>{
     try {
+        
         let currentTime = new Date().toLocaleString("en-GB", {timeZone: "America/New_York", hour: '2-digit', minute: '2-digit', weekday: "short", day: "numeric", year: "numeric", month: "numeric"}).split(/[:| ]/)
         let hasValues = symbolList[1].length //checks that we have symbol values stored
         let isCurrent = symbolList[0][1]===currentTime[1]//checks that the values have been updated today. I am not sure whether it gets updated on weekends.
