@@ -1,6 +1,6 @@
 #loggedInNavbar{
     padding: 0;
-    width: 250px;
+    width: 200px;
     height: 100vh;
     border-right: 2px solid rgba(179, 179, 179, 0.383);
 }
@@ -10,8 +10,10 @@
 }
 #loggedInBrand{
     margin: 0;
-    height: 100px;
-    background-color: #19ca43a6;
+    height: 75px;
+    background-color: rgb(58, 204, 160); 
+    /* #4ADEB1 */
+    border: 2px solid #2de25780;
 }
 #welcomeBack{
     font-family: "Russo One";
@@ -25,6 +27,6 @@
     color: black;
 }
 #loggedInNavbar .loggedInNavbarLinks{
-    margin-left: 50px;
+    margin-left: 20px;
     font-weight: 600;
 }

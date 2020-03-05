@@ -4,8 +4,9 @@ import thunkMiddleware from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import {default as userState} from './user'
 import {default as transState} from './transactions'
+import {default as iexState} from './iex'
 
-const reducer = combineReducers({userState, transState})
+const reducer = combineReducers({userState, transState, iexState})
 
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))

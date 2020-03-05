@@ -21,7 +21,7 @@ function LoggedInNavbar({handleClick, isLoggedIn, clientName, bankroll}){
             <Nav className="mr-auto flex-column">
                 {/* The navbar will show these links after you log in */}
                     <div id="welcomeBack">
-                    Welcome back, <LinkContainer to="/profile" className="w-100 d-flex flex-row-reverse"><Nav.Link >{clientName}</Nav.Link></LinkContainer>
+                    Welcome back, <LinkContainer to="/profile" className="w-75 d-flex flex-row-reverse"><Nav.Link >{clientName}</Nav.Link></LinkContainer>
                     </div>
                 <LinkContainer 
                     to={{
@@ -29,7 +29,7 @@ function LoggedInNavbar({handleClick, isLoggedIn, clientName, bankroll}){
                         query: {type: "portfolio"}
                     }}
                 >
-                    <Nav.Link className="loggedInNavbarLinks">Portfolio</Nav.Link>
+                    <Nav.Link className="loggedInNavbarLinks">My Stocks</Nav.Link>
                 </LinkContainer>
                 <LinkContainer 
                     to={{

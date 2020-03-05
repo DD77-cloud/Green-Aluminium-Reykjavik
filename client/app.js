@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from "react-redux";
-import {Footer} from './components'
+import FooterRoutes from './footer-routes'
 import NavbarRoutes from './navbar-routes'
 import Routes from './routes'
 
@@ -11,7 +11,7 @@ const App = ({isLoggedIn}) => {
     <div style = {layoutStyle}>
       <NavbarRoutes />
       <Routes />
-      <Footer />
+      <FooterRoutes />
     </div>
   )
 }
