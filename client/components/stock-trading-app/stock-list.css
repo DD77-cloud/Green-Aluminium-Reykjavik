@@ -1,8 +1,13 @@
-#stockList{
+#stockListDiv{
     padding: 0;
     width: 350px;
     height: 100vh;
     border-right: 2px solid rgba(179, 179, 179, 0.383);
+    
+}
+#stockList{
+    height: 100%;
+    overflow-y: auto;
 }
 #findStockForm{
     margin: 0;
