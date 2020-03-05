@@ -3,7 +3,7 @@ const {expect} = require('chai')
 const db = require('../index')
 const Transaction = db.model('transaction')
 const User = db.model('user')
-describe('transactionTests', ()=>{
+xdescribe('transactionTests', ()=>{
     let cody
     beforeEach(() => {
         return db.sync({force: true})
