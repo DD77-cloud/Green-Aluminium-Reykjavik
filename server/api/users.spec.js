@@ -12,7 +12,7 @@ let testSessionAdmin = null;
 let adminSession = null;
 let authorizedSession = null;
 
-describe('User routes', () => {
+xdescribe('User routes', () => {
 
   describe('Logged out users shouldnt be able to access', ()=>{
    

@@ -100,7 +100,7 @@ describe('User model', () => {
     })
     it("assembles the address correctly", async() => {
       let createdUser = await createUser(createUserObj)
-      expect(createdUser.address).to.be.equal('Apt 55B, 77C Ocean Ave., New Yok, 11230, NY, St.Louis')
+      expect(createdUser.address).to.be.equal('55B, 77C, Ocean Ave., New Yok, 11230, NY, St.Louis')
     })
   })//Address test end
   describe("empty required input", ()=>{
@@ -131,7 +131,7 @@ describe('User model', () => {
         password: 'Cd123456*'
       })})
     it("sets the bankroll on create", () =>{
-      expect(cody.bankroll).to.be.equal(500000)
+      expect(cody.bankrollDollars).to.be.equal(5000)
     })
    })
 }) 

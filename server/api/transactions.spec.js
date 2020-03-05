@@ -16,7 +16,7 @@ let authorizedSession = null;
 //The number expected in this test will cascade as they depend on the results of previously
 //called methods, and will not always equal default numbers
 
-describe('transactionTests - api', ()=>{
+xdescribe('transactionTests - api', ()=>{
     before(async () => {
         await seed()
     })

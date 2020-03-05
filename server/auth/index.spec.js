@@ -37,10 +37,11 @@ describe('Authorization page', () => {
         const res = await request(app)
           .post('/auth/signup')
           .type("form")
-          .send({...codyObject, admin: true, bankroll: 10000})
+          .send({...codyObject, admin: true, bankrollDollars: 10000, bankrollCents: 100})
           .expect(200)
         expect(res.body.admin).to.be.equal(false)
-        expect(res.body.bankroll).to.be.equal(500000)
+        expect(res.body.bankrollDollars).to.be.equal(5000)
+        expect(res.body.bankrollCents).to.be.equal(0)
     })
     it('Does not expose user password', async() =>{
         const res = await request(app)
