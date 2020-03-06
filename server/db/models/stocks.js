@@ -7,10 +7,11 @@ const Stocks = db.define(
         ticker: {
             type: Sequelize.STRING,
             allowNull: false,
+            primaryKey: true,
         },
         priceHistory: {
             type: Sequelize.ARRAY(Sequelize.JSON),
-            defaultValue: [{}]
+            defaultValue: [],
         }
     }
 )

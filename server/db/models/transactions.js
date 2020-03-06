@@ -6,7 +6,10 @@ const db = require("../db");
 const Transaction = db.define(
     "transaction",
     {
-       
+        stockTicker: {
+            type: Sequelize.STRING,
+            allowNull: false,
+        },
         priceAtTransaction:{
             type: Sequelize.FLOAT,
             allowNull: false,

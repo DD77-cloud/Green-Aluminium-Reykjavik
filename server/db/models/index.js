@@ -9,7 +9,7 @@ User.belongsToMany(Stocks, {
 
 Stocks.belongsToMany(User, {
   through: Transaction,
-  as: 'transactions'
+  as: 'transactions',
 })
 
 module.exports = {
