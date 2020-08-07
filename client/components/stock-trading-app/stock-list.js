@@ -1,3 +1,4 @@
+  
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import SingleStock from './single-stock'
@@ -70,7 +71,7 @@ class StockListAndSearch extends Component{
             isPortfolio = false;
         }
         return(
-            <div id = "stockListDiv">
+            <div id = "stockListDiv" >
             <Form id="findStockForm" inline onSubmit={() => this.findTicker(event)}>
             <Form.Group controlId = "tickerToFind" className = "w-100 h-100">
              <Form.Control onChange = {this.findSuggestedSymbols} type="text" placeholder="&#128269; Search by stock symbol or ticker" className="h-100 rounded-0 border-0 w-100" name="tickerToFind"/>

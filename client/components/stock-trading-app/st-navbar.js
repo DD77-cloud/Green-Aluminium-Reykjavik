@@ -11,9 +11,9 @@ function LoggedInNavbar({handleClick, isLoggedIn, clientName, bankroll}){
     <Navbar id="loggedInNavbar" bg="white" variant="light" expand="lg" className="flex-column">
         <Navbar.Toggle aria-controls="basic-navbar-nav " />
         <Navbar.Collapse className="basic-navbar-nav flex-column w-100">
-            <Nav className="mr-auto flex-column">
+            <Nav className="mr-auto flex-column w-100" >
                 {/* The navbar will show these links after you log in */}
-                    <div id="welcomeBack">
+                    <div id="welcomeBack" className = "w-100">
                     <LinkContainer to="/profile" className="w-100 d-flex justify-content-around align-items-center"><Nav.Link >
                     <i class="far fa-user fa-2x"></i>
                         {clientName}</Nav.Link></LinkContainer>
