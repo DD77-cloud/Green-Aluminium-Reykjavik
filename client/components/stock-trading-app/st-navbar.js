@@ -9,19 +9,14 @@ import "./st-navbar.css";
 function LoggedInNavbar({handleClick, isLoggedIn, clientName, bankroll}){
     return(
     <Navbar id="loggedInNavbar" bg="white" variant="light" expand="lg" className="flex-column">
-      <LinkContainer to="/home" id="loggedInBrand" className="w-100"><Navbar.Brand className="d-flex align-items-center justify-content-center">
-            <img  
-                id="navBarLogoSignedIn"
-                src="https://cdn.pixabay.com/photo/2014/12/21/23/57/silver-576442_960_720.png"
-            />
-	   </Navbar.Brand></LinkContainer>
-
         <Navbar.Toggle aria-controls="basic-navbar-nav " />
         <Navbar.Collapse className="basic-navbar-nav flex-column w-100">
             <Nav className="mr-auto flex-column">
                 {/* The navbar will show these links after you log in */}
                     <div id="welcomeBack">
-                    Welcome back, <LinkContainer to="/profile" className="w-75 d-flex flex-row-reverse"><Nav.Link >{clientName}</Nav.Link></LinkContainer>
+                    <LinkContainer to="/profile" className="w-100 d-flex justify-content-around align-items-center"><Nav.Link >
+                    <i class="far fa-user fa-2x"></i>
+                        {clientName}</Nav.Link></LinkContainer>
                     </div>
                 <LinkContainer 
                     to={{

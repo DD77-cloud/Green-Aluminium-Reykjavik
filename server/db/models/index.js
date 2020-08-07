@@ -1,10 +1,19 @@
 const User = require('./user')
 const Transaction = require('./transactions')
+const Stocks = require('./Stocks')
 
-Transaction.belongsTo(User)
-User.hasMany(Transaction)
+User.belongsToMany(Stocks, {
+  through: Transaction,
+  as: 'users'
+})
+
+Stocks.belongsToMany(User, {
+  through: Transaction,
+  as: 'transactions',
+})
 
 module.exports = {
   Transaction,
-  User
+  User,
+  Stocks
 }

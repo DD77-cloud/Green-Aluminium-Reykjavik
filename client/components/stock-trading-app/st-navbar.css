@@ -1,32 +1,42 @@
 #loggedInNavbar{
     padding: 0;
-    width: 200px;
+    width: 275px;
     height: 100vh;
     border-right: 2px solid rgba(179, 179, 179, 0.383);
+    -moz-box-shadow:    inset 0 0 20px rgba(179, 179, 179, 0.5);
+    -webkit-box-shadow: inset 0 0 20px rgba(179, 179, 179, 0.5);
+    box-shadow:         inset 0 0 20px rgba(179, 179, 179, 0.5);
 }
 #navBarLogoSignedIn{
+    margin-top: -10px;
     height: 50px;
-    width: 55px;
-}
-#loggedInBrand{
-    margin: 0;
-    height: 75px;
-    background-color: rgb(58, 204, 160); 
-    /* #4ADEB1 */
-    border: 2px solid #2de25780;
+    width: 75px;
+    padding-right: 20px;
 }
 #welcomeBack{
-    font-family: "Russo One";
-    width: 250px;
-    padding: 15px;
-    padding-top: 25px;
+    font-family: "Share Tech Mono";
+    font-size: 20px;
+    width: 275px;
     line-height: 0.75;
-    margin-bottom: 10px;
+    padding: 15px;
+
+  
+    margin-bottom: 20px;
+    -moz-box-shadow:    inset 0 0 20px rgba(179, 179, 179, 0.5);
+    -webkit-box-shadow: inset 0 0 20px rgba(179, 179, 179, 0.5);
+    box-shadow:         inset 0 0 20px rgba(179, 179, 179, 0.5);
+}
+.fa-user{
+    color: rgb(21, 110, 21)
 }
 #welcomeBack .nav-link{
     color: black;
 }
 #loggedInNavbar .loggedInNavbarLinks{
+    font-family: "Share Tech Mono";
+    font-size: 15px;
+    line-height: 0.75;
     margin-left: 20px;
     font-weight: 600;
+
 }

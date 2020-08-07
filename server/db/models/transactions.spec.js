@@ -3,7 +3,8 @@ const {expect} = require('chai')
 const db = require('../index')
 const Transaction = db.model('transaction')
 const User = db.model('user')
-xdescribe('transactionTests', ()=>{
+const Stocks = db.model('stocks')
+describe('transactionTests', ()=>{
     let cody
     beforeEach(() => {
         return db.sync({force: true})
@@ -15,12 +16,15 @@ xdescribe('transactionTests', ()=>{
           email: 'cody@puppybook.com',
           password: 'Cd123456*'
         })
+        await Stocks.create({
+            ticker: "TSLA"
+        })
     })
     it('Works and records correct date', async()=>{
         let createdTransaction
         try{
             createdTransaction = await Transaction.create({
-                ticker: "TSLA",
+                stockTicker: "TSLA",
                 priceAtTransaction: 800.03,
                 quantity: 0,
                 userId: 1,
@@ -33,7 +37,7 @@ xdescribe('transactionTests', ()=>{
     it('rejects quantities below 0', async()=>{
         try{
             let createdTransaction = await Transaction.create({
-                ticker: "TSLA",
+                stockTicker: "TSLA",
                 priceAtTransaction: 800.03,
                 quantity: 0,
                 userId: 1,
@@ -42,4 +46,5 @@ xdescribe('transactionTests', ()=>{
             expect(err).to.be.equal("Must be a valid amount")
         }
     })
+    
 })

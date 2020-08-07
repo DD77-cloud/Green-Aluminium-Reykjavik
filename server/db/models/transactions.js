@@ -6,7 +6,7 @@ const db = require("../db");
 const Transaction = db.define(
     "transaction",
     {
-        ticker: {
+        stockTicker: {
             type: Sequelize.STRING,
             allowNull: false,
         },
